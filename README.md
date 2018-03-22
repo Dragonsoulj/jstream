@@ -1,1 +1,1 @@
-# jstream
+# Jet Stream, Inc WordPress Theme
