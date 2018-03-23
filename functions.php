@@ -44,7 +44,8 @@ if ( ! function_exists( 'jstream_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'jstream' ),
+			'main-menu-left' => esc_html__( 'Left Main Menu', 'jstream' ),
+			'main-menu-right' => esc_html__( 'Right Main Menu', 'jstream' ),
 		) );
 
 		/*
@@ -125,11 +126,19 @@ function jstream_scripts() {
 
 	wp_enqueue_style( 'jstream-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'jquery' );
+	wp_deregister_script( 'jquery-core' );
 
-	wp_enqueue_script( 'bootstrap-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', 'jquery' );
+	wp_register_script( 'jquery-core', 'https://code.jquery.com/jquery-3.2.1.min.js', array(), '3.2.1' );
 
-	wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jquery', 'bootstrap-popper' ) );
+	wp_register_script( 'jquery-pre-migrate', 'https://code.jquery.com/jquery-migrate-1.4.1.min.js', array(), '1.4.1' );
+
+	wp_deregister_script( 'jquery-migrate' );
+
+	wp_register_script( 'jquery-migrate', 'https://code.jquery.com/jquery-migrate-3.0.0.min.js', array( 'jquery-pre-migrate' ), '3.0.0' );
+
+	wp_enqueue_script( 'bootstrap-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array( 'jquery' ), null, true );
+
+	wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jquery', 'bootstrap-popper' ), null, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

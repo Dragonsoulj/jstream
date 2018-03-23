@@ -14,7 +14,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
@@ -22,7 +22,6 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'jstream' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
@@ -48,7 +47,7 @@
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'jstream' ); ?></button>
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
+				'theme_location' => 'main-menu-left',
 				'menu_id'        => 'primary-menu',
 			) );
 			?>
