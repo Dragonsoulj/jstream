@@ -11,14 +11,18 @@
 
 ?>
 
-	</div><!-- #content -->
+	</div><!-- .container-fluid -->
+</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<footer id="site-footer" class="banner-color">
+	<div class="site-info container-fluid">
+		<div class="row">
+			<div class="col-md-12 col-lg-10 offset-lg-1">
+				<p>Test</p>
+			</div>
+		</div>
+	</div><!-- .site-info -->
+</footer><!-- #site-footer -->
 
 <?php wp_footer(); ?>
 
