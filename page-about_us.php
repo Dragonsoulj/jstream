@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Home
- * The template for displaying the Home page
+ * Template Name: About Us
+ * The template for displaying the About Us page
  *
  * @package Jet_Stream
  */
@@ -24,9 +24,7 @@ get_header();
 		</main><!-- #main -->
 
 		<div id="secondary" class="col-md-4">
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/SOA1.png" />
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/WhiteMagic1.png" />
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/mohawk1.jpg" />
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/KerryVivian.png" />
 		</div><!-- #secondary -->
 	</div><!-- #primary -->
 

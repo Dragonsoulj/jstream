@@ -9,8 +9,8 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div id="primary" class="row">
+		<main id="main" class="site-main col-md-8">
 
 		<?php
 		while ( have_posts() ) :

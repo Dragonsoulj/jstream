@@ -44,15 +44,21 @@ Text Domain: jstream
 /*--------------------------------------------------------------
 ## General Layout
 --------------------------------------------------------------*/
-/*.content-area {
+.content-area {
 	width: 100%;
-	max-width: 1140px;
+	max-width: 960px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-}*/
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p {
 	margin-bottom: 2rem;
 }
@@ -66,34 +72,11 @@ p {
 	margin-top: 32px;
 }
 
-#site-content {
-	margin-top: 64px;
-}
-
-.site-info {
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-.site-info p {
-	margin-bottom: 0;
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
-}
-
-#side-logos img {
-	display: block;
-	margin: 0 auto;
-	padding: 16px 0;
-}
-
-#side-logos img:first-child {
-	padding-top: 0;
-}
-
-#navigation-bar .navbar {
-	padding-left: 0px;
-	padding-right: 0px;
+@media (min-width: 768px) {
+	#navigation-bar .navbar {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 }
 
 #navigation-bar .navbar-toggler {
@@ -101,14 +84,61 @@ p {
 	padding: 0.5rem;
 }
 
-#main > * {
+#navigation-bar .navbar-toggler-label {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#site-content {
+	margin-top: 64px;
+}
+
+#secondary {
+	margin-top: 7px;
+}
+
+#main > *,
+#secondary > * {
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 }
 
-#side-logos > * {
+#secondary img {
+	display: block;
+	margin: 0 0 0 auto;
+	padding: 1rem 0.5rem;
+}
+
+@media (max-width: 767.98px) {
+	#secondary img {
+		margin: 0 auto;
+	}
+}
+
+#secondary img:first-child {
+	padding-top: 0;
+}
+
+.site-info {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.site-info p {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
+}
+
+@media (min-width: 768px) {
+	#colophon {
+		text-align: right;
+	}
+}
+
+footer.entry-footer {
+	margin-bottom: 1rem;
 }
 
 /*--------------------------------------------------------------
@@ -128,25 +158,32 @@ body {
 }
 
 @media (max-width: 767.98px) {
-	.navigation-white {
+	#main-navigation > col {
 		background-color: #fff;
 	}
 }
 
+#main-navigation,
 #main-navbar-left,
 #main-navbar-right {
 	background-color: #fff;
 }
 
-.navbar-toggler span,
+#navigation-bar .navbar-toggler,
+#navigation-bar .navbar-toggler:link,
+#navigation-bar .navbar-toggler:visited,
 #navigation-bar a:link,
 #navigation-bar a:visited {
 	color: #000;
 }
 
 #navigation-bar a:hover,
-.navbar-toggler span:hover {
+#navigation-bar .navbar-toggler:hover {
 	color: #3fa8f4;
+}
+
+#navigation-bar .navbar-toggler:active {
+	color: #000;
 }
 
 /*--------------------------------------------------------------
