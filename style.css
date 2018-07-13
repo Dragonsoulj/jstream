@@ -49,27 +49,17 @@ Text Domain: jstream
 	max-width: 960px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 1rem;
-	padding-right: 1rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-	margin-bottom: 2rem;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 #logo img {
 	display: block;
-	margin: 16px auto 16px auto;
+	margin: 1rem auto;
 }
 
 #navigation-bar {
-	margin-top: 32px;
+	margin-top: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -90,7 +80,7 @@ p {
 }
 
 #site-content {
-	margin-top: 64px;
+	margin-top: 4rem;
 }
 
 #secondary {
@@ -119,26 +109,36 @@ p {
 	padding-top: 0;
 }
 
+#main,
+#secondary,
+article {
+	margin-bottom: 1rem;
+}
+
+.service-box {
+	margin-bottom: 2rem;
+}
+
+.service-box h2 {
+	margin: 1rem 0;
+}
+
+.service-icon {
+	display: inline-block;
+}
+
+.service-description {
+	padding-bottom: 23px;
+}
+
 .site-info {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 }
 
 .site-info p {
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
-}
-
-@media (min-width: 768px) {
-	#colophon {
-		text-align: right;
-	}
-}
-
-footer.entry-footer {
-	margin-bottom: 1rem;
 }
 
 /*--------------------------------------------------------------
@@ -165,7 +165,8 @@ body {
 
 #main-navigation,
 #main-navbar-left,
-#main-navbar-right {
+#main-navbar-right,
+.service-box {
 	background-color: #fff;
 }
 
@@ -173,22 +174,42 @@ body {
 #navigation-bar .navbar-toggler:link,
 #navigation-bar .navbar-toggler:visited,
 #navigation-bar a:link,
-#navigation-bar a:visited {
+#navigation-bar a:visited,
+.service-toggle:link,
+.service-toggle:visited {
 	color: #000;
 }
 
 #navigation-bar a:hover,
-#navigation-bar .navbar-toggler:hover {
-	color: #3fa8f4;
+#navigation-bar .navbar-toggler:hover,
+.service-toggle:hover {
+	color: #000; /*#3fa8f4;*/
 }
 
-#navigation-bar .navbar-toggler:active {
+#navigation-bar .navbar-toggler:active
+.service-toggle:active {
 	color: #000;
 }
 
 /*--------------------------------------------------------------
 ## Typography
 --------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin-bottom: 2rem;
+}
+
+#navigation-bar a:hover,
+#navigation-bar .navbar-toggler:hover,
+.service-toggle:hover {
+	text-decoration: none;
+}
+
 #navigation-bar,
 #navigation-bar span,
 #navigation-bar span::before {
@@ -197,4 +218,33 @@ body {
 
 #navigation-bar span {
 	line-height: 2.065rem;
+}
+
+.service-description p:last-child {
+	margin-bottom: 0;
+}
+
+.contact-info > :nth-child(odd) {
+	font-weight: bold;
+}
+
+@media (min-width: 768px) {
+	.contact-info > :nth-child(odd) {
+		text-align: right;
+	}
+}
+
+.contact-info p {
+	margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+	#colophon {
+		text-align: right;
+	}
+}
+
+.site-info p {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
 }

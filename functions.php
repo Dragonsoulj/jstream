@@ -102,6 +102,8 @@ function jstream_scripts() {
 
 	wp_enqueue_script( 'bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jquery', 'bootstrap-popper' ), null, true );
 
+	wp_enqueue_script( 'jstream-style-js', get_stylesheet_directory_uri() . '/js/styles.js', array( 'bootstrap-js' ), null, true );
+
 }
 add_action( 'wp_enqueue_scripts', 'jstream_scripts' );
 
