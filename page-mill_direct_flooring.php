@@ -48,51 +48,21 @@ get_header();
 			</article><!-- #post-<?php the_ID(); ?> -->
 
 			<?php
-				$services = js_get_services();
+				$flooring = js_get_flooring();
 
-				foreach( $services as $service ) {
+				foreach( $flooring as $floor ) {
 			?>
 
 				<div class="row service-box">
 					<div class="col-12">
-						<a class="service-toggle" href=".service-<?php echo str_pad( $service, 4, '0', STR_PAD_LEFT ); ?>" data-toggle="collapse" role="button" aria-expanded="false" aria-controls=".service-<?php echo str_pad( $service, 4, '0', STR_PAD_LEFT ); ?>">
+						<a class="service-toggle" href="<?php echo get_the_permalink( $floor ); ?>">
 							<h2>
-								<?php echo get_the_title( $service ); ?>
-								<div class="service-icon service-<?php echo str_pad( $service, 4, '0', STR_PAD_LEFT ); ?>-icon">
+								<?php echo get_the_title( $floor ); ?>
+								<div class="service-icon">
 									<span class="fas fa-angle-right"></span>
 								</div>
 							</h2>
 						</a>
-					</div>
-					<div class="col-12">
-						<div id="service-<?php echo str_pad( $service, 4, '0', STR_PAD_LEFT ); ?>" class="service-description service-<?php echo str_pad( $service, 4, '0', STR_PAD_LEFT ); ?> collapse no-transition">
-							<?php echo apply_filters( 'the_content', get_post_field( 'post_content', $service ) ); ?>
-
-							<?php if ( get_edit_post_link( $service ) ) : ?>
-								<footer class="entry-footer">
-									<?php
-									edit_post_link(
-										sprintf(
-											wp_kses(
-												/* translators: %s: Name of current post. Only visible to screen readers */
-												__( 'Edit <span class="screen-reader-text">%s</span>', 'jstream' ),
-												array(
-													'span' => array(
-														'class' => array(),
-													),
-												)
-											),
-											get_the_title( $service )
-										),
-										'<span class="edit-link">',
-										'</span>',
-										$service
-									);
-									?>
-								</footer><!-- .entry-footer -->
-							<?php endif; ?>
-							</footer><!-- .entry-footer -->
-						</div>
 					</div>
 				</div>
 
