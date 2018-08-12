@@ -53,6 +53,11 @@ Text Domain: jstream
 	padding-right: 15px;
 }
 
+#masthead,
+#site-footer {
+	height: 8rem;
+}
+
 #logo img {
 	display: block;
 	margin: 1rem auto;

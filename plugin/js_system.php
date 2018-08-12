@@ -9,7 +9,13 @@
  *
  */
 
+if ( ! defined( 'WPINC' ) ) {
+  die;
+}
+
 defined( 'ABSPATH' ) or die( "Go hack elsewhere." );
+
+define( 'PLUGIN_NAME_VERSION', '1.0.0' );
 
 /**
  * Function run on activation
@@ -17,6 +23,8 @@ defined( 'ABSPATH' ) or die( "Go hack elsewhere." );
 function js_registration()
 {
   js_create_service_post_type();
+  require_once plugin_dir_path( __FILE__ ) . 'includes/class-js-system-activator.php';
+  JS_System_Activator::activate();
 	flush_rewrite_rules();
 }
 register_activation_hook( __FILE__, 'js_registration' );
@@ -223,5 +231,3 @@ function js_get_flooring_children( $parent_ID = 0 )
     return array();
   }
 }
-
-?>
